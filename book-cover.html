@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan Al Mahmud | Book Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Specific styles for Project Details Page */
+        .project-details-header {
+            text-align: center;
+            padding: 80px 0;
+        }
+        .project-details-header h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-top: 10px;
+        }
+        .project-details-image img {
+            max-width: 80%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-dark);
+            margin: 40px auto;
+            display: block;
+        }
+        .project-details-info {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: flex-start;
+        }
+        .project-details-text {
+            flex: 2;
+        }
+        .project-details-sidebar {
+            flex: 1;
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">H<span class="logo-dot">I</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="contact-btn">Contact Us</a>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects-section" style="padding: 0;">
+            <div class="container">
+                <div class="project-details-header">
+                    <span class="sub-heading">Featured Project</span>
+                    <h1>Professional Book Design & Layout</h1>
+                    <p style="color: var(--text-color);">Project Scope: E-book and Print Book Interior Design</p>
+                </div>
+                
+                <div class="project-details-image">
+                    <img src="https://placehold.co/1000x500/4CAF50/ffffff?text=Book+Design+Mockup" alt="Book Design Mockup">
+                </div>
+
+                <div class="project-details-info">
+                    <div class="project-details-text">
+                        <h3>Overview and Challenge</h3>
+                        <p>This project involved designing the complete interior layout, typography, and chapter styling for a 300-page business management book. The main challenge was ensuring readability across multiple formats (e-book, paperback, and hardcover) while maintaining a modern and clean aesthetic.</p>
+                        
+                        <h3 style="margin-top: 30px;">Execution & Outcome</h3>
+                        <p>I utilized Adobe InDesign to create a structured grid system, chose the 'Georgia' font family for its legibility, and developed custom master pages for headers and footers. The result was a professional-grade, print-ready file that the client successfully launched on Amazon and major publishing platforms.</p>
+                        
+                        <a href="contact.html" class="btn" style="margin-top: 40px;">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-details-sidebar">
+                        <h4 style="font-weight: 700; margin-bottom: 15px;">Project Summary</h4>
+                        <p><strong>Client:</strong> Global Publishing House</p>
+                        <p><strong>Timeline:</strong> 4 Weeks</p>
+                        <p><strong>Category:</strong> Graphic Design, Publishing</p>
+                        <p><strong>Tools Used:</strong> Adobe InDesign, Adobe Photoshop</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ফুটার (Footer) অংশ -->
+    <footer class="main-footer">
+        <!-- Footer content is identical across all pages -->
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>H<span class="logo-dot">I</span></h4>
+                <p>Creative Professional | Graphic Design & Web Dev</p>
+                <p style="margin-top: 15px;">Subscribe to my newsletter for updates:</p>
+                <form class="footer-subscribe" style="display: flex; margin-top: 10px;">
+                    <input type="email" placeholder="Your Email" style="padding: 10px; border: none; border-radius: 5px 0 0 5px; color: #333;">
+                    <button type="submit" style="background-color: var(--highlight-green); color: #fff; padding: 10px; border: none; border-radius: 0 5px 5px 0; cursor: pointer;">Send</button>
+                </form>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+                <p><i class="fas fa-phone"></i> +880 1XXXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> hasan.al.mahmud@example.com</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <p>&copy; 2025 Hasan Al Mahmud. All rights reserved. | Designed by Gemini (AI)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

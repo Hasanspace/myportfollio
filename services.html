@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan Al Mahmud | Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS লোড করা হচ্ছে যাতে Testimonial সেকশন কাজ করে -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">H<span class="logo-dot">I</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="contact-btn">Contact Us</a>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- সার্ভিসেস সেকশন (বিস্তারিত) -->
+        <section class="services-section" style="
+            background: linear-gradient(135deg, #6a11cb 0%, #120618 100%); 
+            border-radius: 30px; 
+            /* উপরে এবং নিচে পর্যাপ্ত প্যাডিং যুক্ত করা হলো */
+            padding: 80px 0 100px 0; 
+            margin: 40px auto; 
+            width: 95%; /* Responsive width */
+            /* Testimonial Section Outer width এর কাছাকাছি */
+            max-width: 1300px; 
+        ">
+            <!-- services-container এর max-width ঠিক করা হলো Testimonial Slider এর (max-w-6xl: 1152px) সাথে মেলানোর জন্য -->
+            <div class="services-container" style="
+                max-width: 1152px; 
+                margin: 0 auto; 
+                padding: 0 1rem; /* মোবাইল রেসপন্সিভনেস এর জন্য সাইড প্যাডিং */
+                text-align: center; /* ভেতরের টেক্সট সেন্টারে রাখার জন্য */
+            ">
+                <span class="sub-heading" style="color: #fff; border-color: rgba(255,255,255,0.3); background-color: rgba(0,0,0,0.1);"> < My Core Services /> </span>
+                <h2 style="color: #fff; margin-top: 10px;">Premium Solutions to Elevate Your Brand</h2>
+                <p class="desc" style="color: #fff; margin: 20px auto 40px auto; max-width: 800px;">
+                    I offer a suite of professional services designed to cover all aspects of your digital presence, from initial design concepts to final implementation and optimization.
+                </p>
+
+                <div class="service-grid">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fas fa-palette"></i>
+                        <h3>Graphic Design</h3>
+                        <p>Logo design, branding, book covers, social media graphics, and print media. Focused on aesthetic appeal and market relevance.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <i class="fab fa-wordpress-simple"></i>
+                        <h3>WordPress Developer</h3>
+                        <p>Custom theme development, plugin configuration, e-commerce setup (WooCommerce), and performance optimization for lightning-fast sites.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.4s;">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>SEO & Digital Strategy</h3>
+                        <p>Keyword research, technical SEO audits, on-page optimization, and content strategy to rank higher and attract organic traffic.</p>
+                    </div>
+                </div>
+
+                <!-- LETS WORK TOGETHER বাটনকে সেন্টারে রাখার জন্য কন্টেইনার এবং উপরে/নিচে প্যাডিং -->
+                <div class="center-btn-container" style="padding: 40px 0 0 0; text-align: center;">
+                    <a href="contact.html" class="work-together-btn">
+                        <i class="fas fa-arrow-alt-circle-down"></i> LETS WORK TOGETHER
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonial Section Start - এখানে নতুন স্টাইল যুক্ত করা হয়েছে -->
+        <section id="testimonials" class="testimonials-section relative" style="
+            /* সার্ভিস সেকশনের সাথে সামঞ্জস্য রেখে আউটসাইড কন্টেইনারের স্টাইল */
+            background: linear-gradient(135deg, #1f092e 0%, #571c4d 100%); 
+            margin:30px auto; 
+            width: 95%;
+            max-width: 1300px;
+            /* আপনার অনুরোধকৃত নতুন স্টাইল */
+            border-radius: 30px; /* Border Radius */
+            max-height: 750px; /* কিছুটা ছোট করার জন্য Max Height */
+            padding: 30px 0 100px 0; /* নিচে অতিরিক্ত প্যাডিং */
+            overflow: hidden; /* কন্টেন্ট বাইরে চলে গেলে যেন হাইড হয় */
+        ">
+            <div class="max-w-7xl mx-auto text-center mb-16 px-4 md:px-8">
+                <h2 class="text-white text-4xl md:text-5xl font-extrabold leading-tight">আমাদের ক্লায়েন্টরা কী বলেন?</h2>
+                <p class="text-white text-lg mt-4 max-w-2xl mx-auto">আমরা যা করি, তা কেন শ্রেষ্ঠ, তার প্রমাণ আমাদের ক্লায়েন্টদের কথায়।</p>
+            </div>
+
+            <div class="relative max-w-6xl mx-auto overflow-hidden">
+                <div id="testimonial-track" class="testimonial-track flex" style="transition: transform 0.6s ease-in-out;">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white p-8 rounded-xl flex flex-col items-center h-full shadow-2xl border border-gray-100 transform transition-transform duration-300 hover:shadow-green-500/50 hover:scale-[1.02]">
+                            <img class="w-20 h-20 rounded-full object-cover mb-4 ring-3 ring-[#4CAF50]" src="https://placehold.co/80x80/4CAF50/ffffff?text=C1" alt="Client 1">
+                            <h3 class="font-bold text-xl text-gray-900 mb-1">Liam Young</h3>
+                            <p class="text-sm text-gray-600 mb-4">ReviewCollector / CEO</p>
+                            <div class="flex text-yellow-500 mb-4 text-xl">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <blockquote class="text-gray-700 italic text-center text-base leading-relaxed">
+                                "It's the best plugin for that purpose, even better than the most popular of this kind of plugin. I will recommend strongly to try. It's probably you will adopt it forever. One of the best plugins I ever try!"
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white p-8 rounded-xl flex flex-col items-center h-full shadow-2xl border border-gray-100 transform transition-transform duration-300 hover:shadow-green-500/50 hover:scale-[1.02]">
+                            <img class="w-20 h-20 rounded-full object-cover mb-4 ring-3 ring-[#4CAF50]" src="https://placehold.co/80x80/4CAF50/ffffff?text=C2" alt="Client 2">
+                            <h3 class="font-bold text-xl text-gray-900 mb-1">Emma Jackson</h3>
+                            <p class="text-sm text-gray-600 mb-4">Testimonal Inc. / HR</p>
+                            <div class="flex text-yellow-500 mb-4 text-xl">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <blockquote class="text-gray-700 italic text-center text-base leading-relaxed">
+                                "After ages in search of a decent solution to show reviews from different sources, I found this amazing tool. The guys in Trustindex made a brilliant job developing this easy-to-use tool. I love it!"
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white p-8 rounded-xl flex flex-col items-center h-full shadow-2xl border border-gray-100 transform transition-transform duration-300 hover:shadow-green-500/50 hover:scale-[1.02]">
+                            <img class="w-20 h-20 rounded-full object-cover mb-4 ring-3 ring-[#4CAF50]" src="https://placehold.co/80x80/4CAF50/ffffff?text=C3" alt="Client 3">
+                            <h3 class="font-bold text-xl text-gray-900 mb-1">Noah King</h3>
+                            <p class="text-sm text-gray-600 mb-4">BigThink / CEO</p>
+                            <div class="flex text-yellow-500 mb-4 text-xl">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <blockquote class="text-gray-700 italic text-center text-base leading-relaxed">
+                                "This plugin does the job, there are various layouts available, its easy to use, install and display reviews using shortcodes. Easy to set up, lots of options and high quality design."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 4 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/3 p-4">
+                        <div class="bg-white p-8 rounded-xl flex flex-col items-center h-full shadow-2xl border border-gray-100 transform transition-transform duration-300 hover:shadow-green-500/50 hover:scale-[1.02]">
+                            <img class="w-20 h-20 rounded-full object-cover mb-4 ring-3 ring-[#4CAF50]" src="https://placehold.co/80x80/4CAF50/ffffff?text=C4" alt="Client 4">
+                            <h3 class="font-bold text-xl text-gray-900 mb-1">Sarah Khan</h3>
+                            <p class="text-sm text-gray-600 mb-4">Marketing Head</p>
+                            <div class="flex text-yellow-500 mb-4 text-xl">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="text-gray-700 italic text-center text-base leading-relaxed">
+                                "Their SEO services significantly boosted our online presence. We saw a noticeable increase in traffic and conversions. Highly recommend!"
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Navigation Buttons: Arrows are positioned outside the track and have shadow -->
+                <button id="prevTestimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-8 p-3 bg-white rounded-full shadow-xl hover:bg-gray-100 transition duration-300 hidden md:block border-2 border-[#4CAF50] text-[#4CAF50] hover:text-gray-700 z-10" aria-label="Previous Testimonial">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="nextTestimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-8 p-3 bg-white rounded-full shadow-xl hover:bg-gray-100 transition duration-300 hidden md:block border-2 border-[#4CAF50] text-[#4CAF50] hover:text-gray-700 z-10" aria-label="Next Testimonial">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+
+                <!-- Navigation Dots -->
+                <div id="testimonial-dots" class="flex justify-center space-x-2 mt-12">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial Section End -->
+    </main>
+
+    <!-- ফুটার (Footer) অংশ -->
+    <footer class="main-footer">
+        <!-- Footer content is identical across all pages -->
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>H<span class="logo-dot">I</span></h4>
+                <p>Creative Professional | Graphic Design & Web Dev</p>
+                <p style="margin-top: 15px;">Subscribe to my newsletter for updates:</p>
+                <form class="footer-subscribe" style="display: flex; margin-top: 10px;">
+                    <input type="email" placeholder="Your Email" style="padding: 10px; border: none; border-radius: 5px 0 0 5px; color: #333;">
+                    <button type="submit" style="background-color: var(--highlight-green); color: #fff; padding: 10px; border: none; border-radius: 0 5px 5px 0; cursor: pointer;">Send</button>
+                </form>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+                <p><i class="fas fa-phone"></i> +880 1XXXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> hasan.al.mahmud@example.com</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <p>&copy; 2025 Hasan Al Mahmud. All rights reserved. | Designed by Gemini (AI)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
