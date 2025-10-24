@@ -1089,4 +1089,41 @@ section {
         font-size: 40px;
     }
     /* ... অন্যান্য ছোট স্ক্রিনের স্টাইল ... */
+
+}
+
+
+
+/* --- @media (max-width: 768px) সেকশন --- */
+@media (max-width: 768px) {
+    /* ... অন্যান্য কোড ... */
+
+    .container {
+        padding: 0 20px; /* মোবাইল ডিভাইসের জন্য প্রধান কন্টেইনারে পর্যাপ্ত প্যাডিং */
+    }
+
+    /* contact-grid কে আরও ভালো করে ফিক্স করা */
+    .contact-grid {
+        padding: 0; /* contact-section এর ভেতরের padding সরিয়ে কন্টেইনারের padding ব্যবহার করা */
+    }
+    
+    /* ফর্ম ইনপুট এবং বাটনগুলিকে অবশ্যই 100% উইডথ দিতে হবে */
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%; 
+        padding: 12px 15px; /* টাচ টার্গেট বড় করার জন্য */
+    }
+
+    /* .contact-form-container এর ভেতরের উপাদান ঠিক করা */
+    .contact-form-container {
+        padding: 20px; /* ফর্ম কন্টেইনারের ভেতরের প্যাডিং */
+    }
+
+    /* .contact-info এর লেখাগুলি ঠিক করা */
+     .contact-info h3 {
+         font-size: 24px;
+     }
+    
+    /* ... অন্যান্য কোড ... */
 }
