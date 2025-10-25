@@ -102,70 +102,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* --- Testimonial Slider (script.js থেকে অবশিষ্ট কোড) --- */
-function setupTestimonialSlider() {
-    const slider = document.querySelector('.testimonial-slider');
-    if (!slider) return;
-
-    const testimonialContainer = document.querySelector('.testimonial-container');
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    const prevTestimonialBtn = document.querySelector('.prev-testimonial');
-    const nextTestimonialBtn = document.querySelector('.next-testimonial');
-    const dotsContainer = document.querySelector('.slider-dots');
+// --- Testimonial Slider JavaScript ---
+document.addEventListener('DOMContentLoaded', () => {
+    const testimonialTrack = document.getElementById('testimonial-track');
+    const prevTestimonialBtn = document.getElementById('prevTestimonial');
+    const nextTestimonialBtn = document.getElementById('nextTestimonial');
+    const testimonialDotsContainer = document.getElementById('testimonial-dots');
     
-    if (!testimonialContainer || testimonials.length === 0 || !prevTestimonialBtn || !nextTestimonialBtn || !dotsContainer) return;
-
+    // Testimonial Cards এবং তাদের সংখ্যা
+    const testimonialCards = Array.from(testimonialTrack.children).filter(node => node.classList.contains('testimonial-card'));
+    const totalTestimonials = testimonialCards.length;
     let currentTestimonialIndex = 0;
     let autoSlideInterval;
 
-    // স্ক্রিনের আকারের উপর ভিত্তি করে কতোটা স্লাইড দেখা যাবে তা নির্ধারণ
-    function getTestimonialsPerView() {
-        if (window.innerWidth >= 1024) return 3; // লার্জ স্ক্রিন
-        if (window.innerWidth >= 768) return 2; // মিডিয়াম স্ক্রিন
-        return 1; // ছোট স্ক্রিন (মোবাইল)
+    // মিডিয়াম স্ক্রিনের উপরে একসাথে কতগুলো কার্ড দেখাবে (আপনার অনুরোধ অনুযায়ী 3টি)
+    const getTestimonialsPerView = () => window.innerWidth >= 768 ? 3 : 1; 
+    const numDots = totalTestimonials - getTestimonialsPerView() + 1; // ডট সংখ্যা
+
+    // স্লাইডারের পজিশন আপডেট করা
+    function updateTestimonialSlider() {
+        // ডেসকটপে 33.33% সরাবে, মোবাইলে 100%
+        const movePercentage = window.innerWidth >= 768 ? 100 / 3 : 100;
+        const offset = -currentTestimonialIndex * movePercentage;
+        testimonialTrack.style.transform = `translateX(${offset}%)`;
+        updateTestimonialDots();
     }
 
-    // ডট তৈরি করা
-    function createDots() {
-        dotsContainer.innerHTML = '';
-        const totalSlides = testimonials.length - getTestimonialsPerView() + 1;
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('slider-dot');
-            if (i === currentTestimonialIndex) {
-                dot.classList.add('active');
-            }
+    // নেভিগেশন ডট তৈরি করা
+    function createTestimonialDots() {
+        testimonialDotsContainer.innerHTML = ''; // পুরোনো ডট মুছে ফেলা
+        const currentNumDots = totalTestimonials - getTestimonialsPerView() + 1; // ডট সংখ্যা গণনা
+        for (let i = 0; i < currentNumDots; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-[#4CAF50]', 'transition', 'duration-300', 'mx-1');
+            dot.setAttribute('data-index', i);
             dot.addEventListener('click', () => {
                 currentTestimonialIndex = i;
                 updateTestimonialSlider();
                 resetAutoSlide();
             });
-            dotsContainer.appendChild(dot);
+            testimonialDotsContainer.appendChild(dot);
         }
     }
 
-    // স্লাইডারের পজিশন আপডেট করা
-    function updateTestimonialSlider() {
-        const perView = getTestimonialsPerView();
-        
-        const cardPercentage = 100 / testimonials.length;
-        const transformValue = -currentTestimonialIndex * cardPercentage;
-
-        testimonialContainer.style.transform = `translateX(${transformValue}%)`;
-
-        // ডট অ্যাক্টিভ করা
-        const dots = document.querySelectorAll('.slider-dot');
+    // ডট হাইলাইট আপডেট করা
+    function updateTestimonialDots() {
+        const dots = testimonialDotsContainer.querySelectorAll('button');
         dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentTestimonialIndex);
+            dot.classList.remove('bg-white', 'scale-125'); // Active ক্লাস সরাচ্ছে
+            dot.classList.add('bg-gray-300');
+            if (index === currentTestimonialIndex) {
+                dot.classList.remove('bg-gray-300');
+                dot.classList.add('bg-white', 'scale-125'); // Active ক্লাস যুক্ত করছে
+            }
         });
     }
 
-
-    // পরবর্তী স্লাইড (লুপিং সহ)
+    // নেক্সট স্লাইড (লুপিং সহ)
     function nextTestimonial() {
-        const totalTestimonials = testimonials.length;
         const maxIndex = totalTestimonials - getTestimonialsPerView();
-
         if (currentTestimonialIndex < maxIndex) {
             currentTestimonialIndex++;
         } else {
@@ -176,9 +171,7 @@ function setupTestimonialSlider() {
 
     // প্রিভিয়াস স্লাইড (লুপিং সহ)
     function prevTestimonial() {
-        const totalTestimonials = testimonials.length;
         const maxIndex = totalTestimonials - getTestimonialsPerView();
-
         if (currentTestimonialIndex > 0) {
             currentTestimonialIndex--;
         } else {
@@ -211,13 +204,14 @@ function setupTestimonialSlider() {
 
     // স্ক্রিনের আকার পরিবর্তন হলে স্লাইডার আপডেট করা
     window.addEventListener('resize', () => {
-        // ডট এবং স্লাইডার পজিশন পুনরায় সেট করুন
-        updateTestimonialSlider();
-        createDots(); 
+        // ডট এবং স্লাইডার পজিশন পুনরায় ঠিক করা
+        createTestimonialDots();
+        updateTestimonialSlider(); 
+        resetAutoSlide();
     });
-    
-    // শুরুতেই একবার কল করা
+
+    // প্রাথমিক লোড
+    createTestimonialDots();
     updateTestimonialSlider();
-    createDots();
     startAutoSlide();
-}
+});

@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasan Al Mahmud | Book Cover Gallery</title>
-    <!-- Font Awesome for icons -->
+    <title>Hasan Al Mahmud | Web Development</title>
+    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
         /* CSS Variables - Assuming these are defined in your main style.css */
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #4CAF50; /* Green/Teal highlight color */
+            /* Retaining secondary-color definition for project-specific elements if not fully covered by main style.css */
+            --secondary-color: #ffffff; /* Green/Teal highlight color */
             --background-color: #ffffff;
             --text-color: #333333;
             --text-light: #666666;
@@ -21,90 +22,8 @@
             --transition-speed: 0.3s;
         }
 
-        /* Base Styles (for this page's elements) */
-        body {
-            font-family: 'Inter', sans-serif; /* Using a modern font */
-            background-color: #f8f8f8;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header/Navigation */
-        .main-header {
-            background-color: var(--background-color);
-            box-shadow: var(--shadow-light);
-            /* Header itself should not animate, only content */
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-        }
-        .logo-dot {
-            color: var(--secondary-color);
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-        .nav-links a.active {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 3px;
-        }
-        .contact-btn {
-            background-color: var(--text-color);
-            color: var(--background-color);
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color var(--transition-speed);
-        }
-        .contact-btn:hover {
-            background-color: var(--secondary-color);
-        }
-        .hamburger {
-            display: none; /* Hide on desktop */
-        }
-        .sub-heading {
-            display: inline-block;
-            padding: 8px 15px;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-            border: 1px solid var(--secondary-color);
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            /* Header content animation */
-            opacity: 0;
-            animation: slideInUp 0.6s ease-out forwards;
-            animation-delay: 0.2s;
-        }
-
         /* Project Gallery Specific Styles */
-        .projects-section {
+        .projects-section2 {
             padding: 80px 0; 
         }
         .project-details-header {
@@ -132,10 +51,10 @@
         .project-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            padding-bottom: 80px;
+            gap: 30px;
+            padding-bottom: 20px;
         }
-        .project-card {
+        .project-card2 {
             background-color: var(--background-color);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-light);
@@ -156,26 +75,26 @@
         .project-card:hover .project-image img {
             transform: scale(1.05); /* Hover effect for image */
         }
-        .project-image {
+        .project-image2 {
             overflow: hidden;
             height: 400px; 
         }
-        .project-image img {
+        .project-image2 img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease-in-out;
             border-radius: var(--border-radius);
         }
-        .project-content {
+        .project-content2 {
             padding: 25px;
         }
-        .project-content h4 {
+        .project-content2 h4 {
             font-size: 20px;
             margin: 0 0 5px 0;
             color: var(--text-color);
         }
-        .project-content p {
+        .project-content2 p {
             color: var(--text-light);
             margin: 0;
             font-size: 14px;
@@ -291,6 +210,35 @@
                 font-size: 32px;
             }
         }
+
+        /* Keyframe Animations (Retained as they are specific to the gallery) */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Overrides (For the gallery only, nav/footer is in style.css) */
+        @media (max-width: 1024px) {
+            .project-details-header h1 {
+                font-size: 40px;
+            }
+            .project-gallery {
+                grid-template-columns: 1fr; 
+                gap: 25px;
+            }
+        }
+        @media (max-width: 768px) {
+            .project-details-header h1 {
+                font-size: 32px;
+            }
+        }
+      
     </style>
 </head>
 <body>
@@ -310,7 +258,13 @@
     </header>
 
     <main>
-        <section class="projects-section">
+        <section class="projects-section2" style=" 
+             max-width: 1152px; 
+                margin: 0 auto; 
+                padding: 40px 1rem; /* মোবাইল রেসপন্সিভনেস এর জন্য সাইড প্যাডিং */
+                text-align: center; /* ভেতরের টেক্সট সেন্টারে রাখার জন্য */
+            
+            ">
             <div class="container">
                 <!-- Project Details Header - Now the main heading for the gallery -->
                 <div class="project-details-header">
@@ -322,52 +276,52 @@
                 <!-- Main Project Gallery (2 Column Layout) -->
                 <div class="project-gallery">
                     <!-- Project Card 1: Book Cover 1 -->
-                    <div class="project-card" style="animation-delay: 0.5s;">
-                        <div class="project-image">
+                    <div class="project-card2" style="animation-delay: 0.5s;">
+                        <div class="project-image2">
                             <img src="https://placehold.co/800x1200/5E35B1/ffffff?text=Book+Cover+Design+1" 
                                  alt="Book Cover Design 1 - The Astral Dream" 
                                  onclick="openModal(this.src)">
                         </div>
-                        <div class="project-content">
+                        <div class="project-content2">
                             <h4>The Astral Dream (Sci-Fi)</h4>
                             <p>ক্লায়েন্ট: Stellar Books | ক্যাটেগরি: বুক কভার ডিজাইন</p>
                         </div>
                     </div>
                     
                     <!-- Project Card 2: Book Cover 2 -->
-                    <div class="project-card" style="animation-delay: 0.6s;">
-                        <div class="project-image">
+                    <div class="project-card2" style="animation-delay: 0.6s;">
+                        <div class="project-image2">
                             <img src="https://placehold.co/800x1200/2196F3/ffffff?text=Book+Cover+Design+2" 
                                  alt="Book Cover Design 2 - Business Mastery" 
                                  onclick="openModal(this.src)">
                         </div>
-                        <div class="project-content">
+                        <div class="project-content2">
                             <h4>Business Mastery (Non-Fiction)</h4>
                             <p>ক্লায়েন্ট: Global Publishing | ক্যাটেগরি: বুক লেআউট ও ডিজাইন</p>
                         </div>
                     </div>
 
                     <!-- Project Card 3: Book Cover 3 -->
-                    <div class="project-card" style="animation-delay: 0.7s;">
-                        <div class="project-image">
+                    <div class="project-card2" style="animation-delay: 0.7s;">
+                        <div class="project-image2">
                             <img src="https://placehold.co/800x1200/FF5722/ffffff?text=Book+Cover+Design+3" 
                                  alt="Book Cover Design 3 - Ancient Secrets" 
                                  onclick="openModal(this.src)">
                         </div>
-                        <div class="project-content">
+                        <div class="project-content2">
                             <h4>Ancient Secrets (Historical Fiction)</h4>
                             <p>ক্লায়েন্ট: Heritage Press | ক্যাটেগরি: প্রিন্ট ডিজাইন</p>
                         </div>
                     </div>
                     
                     <!-- Project Card 4: Book Cover 4 -->
-                    <div class="project-card" style="animation-delay: 0.8s;">
-                        <div class="project-image">
+                    <div class="project-card2" style="animation-delay: 0.8s;">
+                        <div class="project-image2">
                             <img src="https://placehold.co/800x1200/795548/ffffff?text=Book+Cover+Design+4" 
                                  alt="Book Cover Design 4 - The Desert Path" 
                                  onclick="openModal(this.src)">
                         </div>
-                        <div class="project-content">
+                        <div class="project-content2">
                             <h4>The Desert Path (Travel Guide)</h4>
                             <p>ক্লায়েন্ট: Travel Enthusiast Co. | ক্যাটেগরি: ই-বুক ডিজাইন</p>
                         </div>
@@ -392,41 +346,40 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- ফুটার (Footer) অংশ - unchanged -->
-    <footer class="main-footer" style="background-color: var(--text-color); color: #fff; padding: 40px 0;">
-        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 20px;">
-            <div class="footer-brand" style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-                <h4 style="font-size: 20px; margin: 0;">H<span class="logo-dot" style="color: var(--secondary-color);">I</span></h4>
-                <p style="font-size: 14px; color: #ccc;">Creative Professional | Graphic Design & Web Dev</p>
-                <p style="margin-top: 15px; font-size: 14px;">Subscribe to my newsletter for updates:</p>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>H<span class="logo-dot">I</span></h4>
+                <p>Creative Professional | Graphic Design & Web Dev</p>
+                <p style="margin-top: 15px;">Subscribe to my newsletter for updates:</p>
                 <form class="footer-subscribe" style="display: flex; margin-top: 10px;">
-                    <input type="email" placeholder="Your Email" style="padding: 10px; border: none; border-radius: 5px 0 0 5px; color: #333; flex-grow: 1;">
-                    <button type="submit" style="background-color: var(--secondary-color); color: #fff; padding: 10px; border: none; border-radius: 0 5px 5px 0; cursor: pointer; transition: background-color var(--transition-speed);">Send</button>
+                    <input type="email" placeholder="Your Email" style="padding: 10px; border: none; border-radius: 5px 0 0 5px; color: #333;">
+                    <button type="submit" style="background-color: var(--highlight-green); color: #fff; padding: 10px; border: none; border-radius: 0 5px 5px 0; cursor: pointer;">Send</button>
                 </form>
             </div>
-            <div class="footer-links" style="margin-bottom: 20px;">
-                <h5 style="font-size: 16px; margin-bottom: 10px; font-weight: 600;">Quick Links</h5>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 5px;"><a href="about.html" style="color: #ccc; text-decoration: none; font-size: 14px;">About Me</a></li>
-                    <li style="margin-bottom: 5px;"><a href="services.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Services</a></li>
-                    <li style="margin-bottom: 5px;"><a href="projects.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Projects</a></li>
-                    <li style="margin-bottom: 5px;"><a href="contact.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-contact" style="margin-bottom: 20px;">
-                <h5 style="font-size: 16px; margin-bottom: 10px; font-weight: 600;">Contact Info</h5>
-                <p style="font-size: 14px; margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Dhaka, Bangladesh</p>
-                <p style="font-size: 14px; margin-bottom: 5px;"><i class="fas fa-phone" style="margin-right: 8px;"></i> +880 1XXXXXXXXX</p>
-                <p style="font-size: 14px; margin-bottom: 5px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hasan.al.mahmud@example.com</p>
+            <div class="footer-contact">
+                <h5>Contact Info</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+                <p><i class="fas fa-phone"></i> +880 1XXXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> hasan.al.mahmud@example.com</p>
             </div>
         </div>
-        <div class="footer-social" style="text-align: center; padding-top: 20px; border-top: 1px solid #444;">
-            <p style="font-size: 12px; color: #999;">&copy; 2025 Hasan Al Mahmud. All rights reserved. | Designed by Gemini (AI)</p>
+        <div class="footer-social">
+            <p>&copy; 2025 Hasan Al Mahmud. All rights reserved. | Designed by Gemini (AI)</p>
         </div>
     </footer>
 
     <script>
-        // Fullscreen Modal Functions
+        // Fullscreen Modal Functions (Existing)
         function openModal(src) {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
@@ -435,11 +388,39 @@
         }
 
         function closeModal(event) {
-            // If the close button 'X' is clicked, or the area outside the image is clicked (target is the modal itself)
             if (event.target.classList.contains('close-btn') || event.target.id === 'imageModal') {
                 document.getElementById('imageModal').style.display = "none";
             }
         }
+        
+        // Hamburger Menu Logic (New, based on style.css)
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            body.classList.toggle('menu-open'); // To prevent scrolling when menu is open
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                body.classList.remove('menu-open');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
     </script>
 </body>
 </html>
