@@ -281,14 +281,15 @@ section {
 
 /* --- About Section (about.html & index.html) --- */
 .about-card {
+    max-width: 1152px;
     background-color: var(--secondary-color);
     border: 1px solid #eee;
-    padding: 60px;
+    padding: 50px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     margin-top: 50px;
 }
 
@@ -298,8 +299,8 @@ section {
 }
 
 .about-text h2 {
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 45px;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: 20px;
 }
@@ -1089,4 +1090,5 @@ section {
         font-size: 40px;
     }
     /* ... অন্যান্য ছোট স্ক্রিনের স্টাইল ... */
+
 }
